@@ -1,4 +1,99 @@
-"ERROR:  syntax error at or near "CREATE"
-LINE 1: ...ARE "CURSOR:CONN:3315009" CURSOR WITHOUT HOLD FOR CREATE TAB...
-                                                             ^
-"
+-- Table: public.invoice
+
+-- DROP TABLE public.invoice;
+
+CREATE TABLE public.invoice
+(
+    invoiceid character varying(30) COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    invserial numeric(10,0),
+    invcode character varying(6) COLLATE pg_catalog."default",
+    customerid character varying(30) COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customerdetails character varying(60) COLLATE pg_catalog."default",
+    invtype character varying(50) COLLATE pg_catalog."default",
+    invno character varying(400) COLLATE pg_catalog."default",
+    clearanceno character varying(30) COLLATE pg_catalog."default",
+    clearancedate timestamp without time zone,
+    invdate timestamp without time zone,
+    orderno character varying(30) COLLATE pg_catalog."default",
+    orderdate timestamp without time zone,
+    agentid character varying(30) COLLATE pg_catalog."default",
+    agentdetails character varying(30) COLLATE pg_catalog."default",
+    accountgroup character varying(60) COLLATE pg_catalog."default",
+    comments character varying(1000) COLLATE pg_catalog."default",
+    grossamount numeric(16,2),
+    netamount numeric(16,2),
+    daysdue numeric(10,0),
+    lrid character varying(30) COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    lrno character varying(300) COLLATE pg_catalog."default",
+    lrdate timestamp without time zone,
+    lrdate2 timestamp without time zone,
+    numberofparcel numeric(10,0),
+    weight numeric(15,3),
+    freight numeric(15,3),
+    tdsperc numeric(10,2),
+    tdsamount numeric(16,2),
+    tdsdate timestamp without time zone,
+    destination character varying(100) COLLATE pg_catalog."default",
+    transportid character varying(30) COLLATE pg_catalog."default",
+    adjustmentamt numeric(12,2),
+    adjustmenttdsamt numeric(12,2),
+    invstatus character varying(10) COLLATE pg_catalog."default",
+    totpieces numeric(8,2),
+    totmeter numeric(10,2),
+    totweight numeric(10,3),
+    paymenttype character varying(20) COLLATE pg_catalog."default",
+    chequeid character varying(30) COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    chequeno character varying(15) COLLATE pg_catalog."default",
+    chequedate timestamp without time zone,
+    discamt numeric(16,2),
+    discamt2 numeric(16,2),
+    discamt3 numeric(16,2),
+    boxlessamt numeric(16,2),
+    vatamt numeric(10,2),
+    cstamt numeric(10,2),
+    transportamt numeric(10,2),
+    avatamt numeric(10,2),
+    cgstrate numeric(6,2),
+    cgstamt numeric(10,2),
+    sgstrate numeric(6,2),
+    sgstamt numeric(10,2),
+    igstrate numeric(6,2),
+    igstamt numeric(10,2),
+    tdsaccountid character varying(30) COLLATE pg_catalog."default",
+    tdsnature character varying(40) COLLATE pg_catalog."default",
+    paymenttermsid character varying(30) COLLATE pg_catalog."default",
+    finalamt numeric(16,2),
+    quarter character varying(10) COLLATE pg_catalog."default",
+    addressid character varying(30) COLLATE pg_catalog."default",
+    salespersonid character varying(80) COLLATE pg_catalog."default",
+    packing character varying(40) COLLATE pg_catalog."default",
+    branch character varying(40) COLLATE pg_catalog."default",
+    frombranch character varying(40) COLLATE pg_catalog."default",
+    branchname character varying(40) COLLATE pg_catalog."default",
+    tostation character varying(40) COLLATE pg_catalog."default",
+    adjamtplus numeric(16,2),
+    adjamtmin numeric(16,2),
+    agentperc numeric(12,2),
+    agentamt numeric(12,2),
+    freightacid character varying(30) COLLATE pg_catalog."default",
+    createdate timestamp without time zone,
+    createtime character varying(20) COLLATE pg_catalog."default",
+    duedate timestamp without time zone,
+    lrpaidid numeric(25,0),
+    signdate timestamp without time zone,
+    brokerid character varying(30) COLLATE pg_catalog."default",
+    brokercode character varying(15) COLLATE pg_catalog."default",
+    wastepcs numeric(10,0),
+    wastemtrs numeric(10,2),
+    parcelman character varying(40) COLLATE pg_catalog."default",
+    pregst character varying(1) COLLATE pg_catalog."default",
+    createdbyid character varying(60) COLLATE pg_catalog."default",
+    CONSTRAINT invoice_pkey PRIMARY KEY (invoiceid)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.invoice
+    OWNER to postgres;
